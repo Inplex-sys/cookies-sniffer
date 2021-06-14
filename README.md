@@ -11,7 +11,7 @@ Our Website [https://omega-project.cz/](https://omega-project.cz/) !
   - Linux and windows usable
 
 # How it work ?
-![alt text](https://github.com/inplex-sys/syn-ack-ddos/blob/main/img/syn-ack.jpg?raw=true)
+![alt text](https://github.com/inplex-sys/cookies-sniffer/blob/main/img/cookies-sniffer.jpg?raw=true)
 
 ### Installation
 
