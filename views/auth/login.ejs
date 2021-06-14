@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cookies-Sniffer - Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="icon" href="/assets/img/favicons/favicon.png">
+</head>
+<style type="text/css">
+    body {
+        background-color: #1a1a1a!important;
+    }
+
+    #login .container #login-row #login-column #login-box {
+        margin-top: 120px;
+        max-width: 600px;
+        border: 1px solid #9C9C9C;
+        background-color: #EAEAEA;
+    }
+    #login .container #login-row #login-column #login-box #login-form {
+        padding: 20px;
+    }
+    #login .container #login-row #login-column #login-box #login-form #register-link {
+        margin-top: -85px;
+    }
+</style>
+<body>
+    <div id="login">
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <br>
+                        <h3 class="text-center">Cookies-Sniffer - Login</h3>
+                        <br>
+                        <div id="props-output-error"></div>
+                        <br>
+                        <div class="form-group">
+                            <label>Auth Key</label><br>
+                            <input type="text" id="props-output-auth-key" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-dark btn-md col-12" onclick="auth.Submit()">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="/dist/js/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var auth = {
+            Submit: function() {
+                var payload = {
+                    auth_key: $("#props-output-auth-key").val()
+                }
+
+                $.ajax({
+                    url: "/api/v1/auth",
+                    method: "POST",
+                    dataType: "json",
+                    data: JSON.stringify(payload),
+                    contentType: "application/json"
+                }).done(function(data) {
+                    var json_data =  JSON.parse(JSON.stringify(data));
+                    if (json_data.code === "2001") {
+                        window.location.href = "/";
+                    }else{
+                        $("#props-output-error").html(`
+                            <div class="card bg-dark">
+                                <div class="card-body">
+                                    <span style="color: #FFF">Error: Wrong auth-key</span>
+                                </div>
+                            </div>
+                        `)
+                    }
+                });
+            }
+        }
+    </script>
+</html>
