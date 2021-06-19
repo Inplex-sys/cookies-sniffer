@@ -6,7 +6,7 @@ Our Website [https://omega-project.cz/](https://omega-project.cz/) !
 
   - Simple data saving (JSON)
   - Modulable
-  - Securised login system
+  - Securized login system
   - WEB & CLI logs saving
   - Linux and windows usable
 
