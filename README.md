@@ -1,6 +1,6 @@
 # Dark Utilities - Cookies-sniffer
 
-Our Website [https://omega-project.cz/](https://omega-project.cz/) !
+Our Website [https://dark-utilities.pw/](https://dark-utilities.pw/) !
 
 # Features!
 
