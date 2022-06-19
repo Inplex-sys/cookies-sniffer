@@ -146,6 +146,7 @@ app.get('/',function (request, response) {
     }else{
         response.redirect('/auth/login');
     }
+    
     response.end();
 });
 
